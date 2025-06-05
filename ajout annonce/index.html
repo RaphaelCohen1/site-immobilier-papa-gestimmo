@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter une annonce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Ajouter une annonce</h1>
+
+    <form id="form-annonce" onsubmit="handleFormSubmit(event)">
+      <label for="titre">Titre de l'annonce</label>
+      <input type="text" id="titre" name="titre" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="5" required></textarea>
+
+      <label for="type">Type de bien</label>
+      <select id="type" name="type" required>
+        <option value="">-- Choisir --</option>
+        <option value="Appartement">Appartement</option>
+        <option value="Maison">Maison</option>
+        <option value="Terrain">Terrain</option>
+        <option value="Local commercial">Local commercial</option>
+        <option value="Bureau">Bureau</option>
+        <option value="Parking">Parking</option>
+      </select>
+
+      <label for="prix">Prix (€)</label>
+      <input type="number" id="prix" name="prix" required min="0">
+
+      <label for="image">Image (factice pour le test)</label>
+      <input type="file" id="image" name="image" accept="image/*">
+
+      <button type="submit">Publier l'annonce</button>
+    </form>
+
+    <a href="/site immobilier pour papa/espace du collaborateur/index.html" class="btn-action logout" style="margin-top:2rem;">⬅ Retour à l'espace</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

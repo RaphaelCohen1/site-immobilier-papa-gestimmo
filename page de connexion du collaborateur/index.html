@@ -1,0 +1,29 @@
+<?php
+// Démarrage de session si besoin plus tard
+//session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Collaborateur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Connexion Collaborateur</h2>
+    
+    <form action="login.php" method="POST" class="login-form">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="ex: jean@agence.com">
+
+      <label for="mot_de_passe">Mot de passe</label>
+      <input type="password" id="mot_de_passe" name="mot_de_passe" required placeholder="Votre mot de passe">
+
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+</body>
+</html>
