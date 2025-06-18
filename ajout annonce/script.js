@@ -1,69 +1,62 @@
-function handleFormSubmit(e) {
-    e.preventDefault();
-  
-    const titre = document.getElementById('titre').value;
-    const description = document.getElementById('description').value;
-    const type = document.getElementById('type').value;
-    const prix = document.getElementById('prix').value;
-  
-    const nouvelleAnnonce = {
-      titre,
-      description,
-      type,
-      prix
-    };
-  
-    // Récupérer les annonces existantes ou un tableau vide
-    const annonces = JSON.parse(localStorage.getItem('annonces')) || [];
-  
-    // Ajouter la nouvelle annonce
-    annonces.push(nouvelleAnnonce);
-  
-    // Enregistrer dans localStorage
-    localStorage.setItem('annonces', JSON.stringify(annonces));
-  
-    alert(`Annonce "${titre}" ajoutée !`);
-  
-    // Rediriger vers l'espace collaborateur ou une autre page
-    window.location.href = "espace-collaborateur.html";
+// Tableau pour stocker les images sélectionnées
+const imagesArray = [];
+
+// Récupération de l'input et de la zone de preview
+const imageInput = document.getElementById('image');
+const previewContainer = document.getElementById('imagePreview');
+
+// Quand une image est sélectionnée
+imageInput.addEventListener('change', function (event) {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  if (imagesArray.length >= 3) {
+    alert("Vous ne pouvez ajouter que 3 images maximum.");
+    imageInput.value = ''; // Reset input
+    return;
   }
 
-  // Récupérer les annonces dans localStorage
-  const annonces = JSON.parse(localStorage.getItem('annonces')) || [];
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    // Ajoute l’image en base64 au tableau
+    imagesArray.push(e.target.result);
 
-  const propertyList = document.querySelector('.property-list');
+    // Affiche l’image
+    const img = document.createElement('img');
+    img.src = e.target.result;
+    img.classList.add('preview-image');
+    img.style.maxWidth = '150px';
+    img.style.margin = '5px';
+    previewContainer.appendChild(img);
+  };
 
-  // Vider les annonces statiques si tu veux les remplacer par celles des agents
-  propertyList.innerHTML = '';
+  reader.readAsDataURL(file);
+  imageInput.value = ''; // Permet de recharger la même image si besoin
+});
 
-  if (annonces.length === 0) {
-    propertyList.innerHTML = '<p>Aucune annonce pour le moment.</p>';
-  } else {
-    annonces.forEach(annonce => {
-      // Créer le div property pour chaque annonce
-      const propertyDiv = document.createElement('div');
-      propertyDiv.classList.add('property');
+function ajouterAnnonce(event) {
+  event.preventDefault();
 
-      // Tu peux adapter ce template HTML selon tes besoins (images, descriptions, etc.)
-      propertyDiv.innerHTML = `
-        <img src="${annonce.image || 'image/default.jpg'}" alt="${annonce.titre}">
-        <div class="info">
-          <p>${annonce.titre} - ${annonce.description}</p>
-          <p><strong>Type :</strong> ${annonce.type} | <strong>Prix :</strong> ${annonce.prix} €</p>
-        </div>
-      `;
-
-      propertyList.appendChild(propertyDiv);
-    });
+  if (imagesArray.length === 0) {
+    alert("Veuillez ajouter au moins une image.");
+    return;
   }
-
-  const image = document.getElementById('image').value || 'image/default.jpg';
 
   const nouvelleAnnonce = {
-    titre,
-    description,
-    type,
-    prix,
-    image
+    id: Date.now(),
+    titre: document.getElementById('titre').value,
+    description: document.getElementById('description').value,
+    type: document.getElementById('type').value,
+    prix: document.getElementById('prix').value,
+    date: new Date().toLocaleDateString('fr-FR'),
+    images: imagesArray
   };
-  
+
+  let annonces = JSON.parse(localStorage.getItem('annonces')) || [];
+  annonces.push(nouvelleAnnonce);
+  localStorage.setItem('annonces', JSON.stringify(annonces));
+
+  // Redirection
+  window.location.href = "/site immobilier pour papa/onglet acheter/index.html?success=1";
+}

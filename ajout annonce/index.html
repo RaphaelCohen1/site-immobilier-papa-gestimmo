@@ -11,7 +11,7 @@
   <div class="form-container">
     <h1>Ajouter une annonce</h1>
 
-    <form id="form-annonce" onsubmit="handleFormSubmit(event)">
+    <form id="form-annonce" onsubmit="ajouterAnnonce(event)">
       <label for="titre">Titre de l'annonce</label>
       <input type="text" id="titre" name="titre" required>
 
@@ -32,8 +32,14 @@
       <label for="prix">Prix (€)</label>
       <input type="number" id="prix" name="prix" required min="0">
 
-      <label for="image">Image (factice pour le test)</label>
-      <input type="file" id="image" name="image" accept="image/*">
+      <label for="image">Ajouter jusqu'à 3 images</label>
+    <input type="file" id="image" name="image" accept="image/*">
+    <small>Maximum 3 images</small>
+
+    <!-- Cette div est obligatoire pour afficher les aperçus -->
+    <div id="imagePreview" style="margin-top: 10px;"></div>
+
+
 
       <button type="submit">Publier l'annonce</button>
     </form>
@@ -41,6 +47,6 @@
     <a href="/site immobilier pour papa/espace du collaborateur/index.html" class="btn-action logout" style="margin-top:2rem;">⬅ Retour à l'espace</a>
   </div>
 
-  <script src="script.js"></script>
+  <script src="/site immobilier pour papa/ajout annonce/script.js"></script>
 </body>
 </html>
