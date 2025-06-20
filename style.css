@@ -653,8 +653,252 @@ p {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+.toggle-container, .toggle-button {
+    box-sizing: border-box;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    .container-flex h1 {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    .toggle-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto 5px auto;
+        padding: 12px 20px;
+        font-size: 14px;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box; /* Ajout recommandé */
+    }
+
+    .toggle-button {
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 12px 20px;
+        font-size: 14px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .vision {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .vision-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .vision-image img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-flex {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .container-flex h1 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    .social-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+    }
+    
+    .nav-item a {
+        margin: 5px 10px;
+        font-size: 14px;
+    }
+    
+    .input-select-menu {
+        flex-direction: column;
+        width: 90%;
+        border-radius: 20px;
+    }
+    
+    .input-select-menu input,
+    .input-select-menu select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    
+    /*.toggle-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        gap: 10px;
+    }*/
+    
+    .toggle-button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .banner-sub-access {
+        flex-direction: column;
+    }
+    
+    .sub-block {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .sub-block:not(:last-child)::after {
+        display: none;
+    }
+    
+    .footer-menu {
+        flex-direction: column;
+    }
+    
+    .column-menu {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .container-flex {
+        flex-direction: column;
+        padding: 20px; /* ajustez selon vos besoins */
+    }
+    
+    .container-flex h1 {
+        font-size: 18px; /* ajustez la taille du texte pour mobile */
+        margin: 10px 0; /* ajustez les marges selon vos besoins */
+    }
+    
+    .slogant {
+        font-size: 12px;
+    }
+
+    p.slogant{
+        color: #fff; /* Rend le texte visible sur un fond clair */
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif; /* Utilisation de Montserrat comme police */
+        font-weight: 700; /* Poids de la police en gras */
+    }
+
+    .toggle-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-bottom: 5px;
+        padding: 12px 20px; /* Ajuste le padding pour mobile */
+        font-size: 14px; /* Ajuste la taille de la police pour mobile */
+        margin-right: 0; /* Supprime la marge droite */
+        margin-left: 0; /* Supprime la marge gauche */
+        
+    }
+    
+    .toggle-button {
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 12px 20px; /* Ajuste le padding pour mobile */
+        font-size: 14px; /* Ajuste la taille de la police pour mobile */
+        margin-right: 0; /* Supprime la marge droite */
+        margin-left: 0; /* Supprime la marge gauche */
+        align-items: center; /* Centre les boutons */
+        margin: 0 auto; /* Centre le conteneur */
+    }
+    
+    .services {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .footer-bottom ul {
+        flex-direction: column;
+    }
+    
+    .footer-bottom ul li {
+        margin: 5px 0;
+    }
+    
+    .vision {
+        padding: 20px;
+        width: 95%;
+    }
+}
+
+/* Correction spécifique pour la navigation */
+@media (max-width: 768px) {
+    .nav-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-item a {
+        margin: 5px 0;
+    }
+    
+    .containerflex {
+        flex-direction: column;
+    }
+    
+    .btn-user {
+        margin: 10px 0;
+    }
+    /*.toggle-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        align-items: center; /* Centre les boutons 
+        margin: 0 auto; /* Centre le conteneur 
+    }*/
+    
+}
+/* Responsive : titre centré sur mobile */
+@media (max-width: 768px) {
+    .container-flex h1 {
+        font-size: 8px;
+        text-align: center;
+        word-break: break-word;
+    }
+    .container-flex {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    
+}
+
+
 /* Responsive : empilement en colonne sur mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .input-select-menu {
         flex-direction: column;
         border-radius: 20px;
@@ -1071,3 +1315,24 @@ iframe {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    .toggle-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto 5px auto;
+        padding: 12px 20px;
+        font-size: 14px;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .toggle-button {
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 12px 20px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+}
