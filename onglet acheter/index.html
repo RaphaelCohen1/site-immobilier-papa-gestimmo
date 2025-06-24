@@ -172,8 +172,6 @@
                 z-index: 20;
                 background: transparent;
             }
-
-
         </style>
     </head>
     <body>
@@ -274,6 +272,11 @@
                     </div>
                 <div class="social-block desktop-blk">
                 </div>
+                <button class="burger-btn">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
                 <nav>
                     <div class="nav-item">
                         <a href="/site immobilier pour papa/index.html">
@@ -363,60 +366,72 @@
         </div>
         <!--<script src="/site immobilier pour papa/onglet acheter/script.js"></script>-->
         <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const annonces = JSON.parse(localStorage.getItem('annonces')) || [];
-            const container = document.getElementById('liste-annonces');
-          
-            if (annonces.length === 0) {
-              container.innerHTML = '<p>Aucune annonce disponible.</p>';
-              return;
-            }
-          
-            annonces.forEach(annonce => {
-              const slidesHtml = annonce.images.map((img, index) =>
-                `<img class="carousel-image ${index === 0 ? 'active' : ''}" src="${img}" alt="${annonce.titre} image ${index + 1}">`
-              ).join('');
-          
-              const propertyDiv = document.createElement('div');
-              propertyDiv.classList.add('property');
-          
-              propertyDiv.innerHTML = `
-                <div class="carousel-container">
-                  <button onclick="prevSlide(this)" class="carousel-btn prev">Précédent</button>
-                  <div class="carousel-slides">
-                    ${slidesHtml}
-                  </div>
-                  <button onclick="nextSlide(this)" class="carousel-btn next">Suivant</button>
-                </div>
-                <div class="info">
-                  <p>${annonce.titre} - ${annonce.description}</p>
-                  <p><strong>Type :</strong> ${annonce.type} | <strong>Prix :</strong> ${annonce.prix} €</p>
-                  <a href="annonce-detail.html?id=${annonce.id}">Voir annonce</a>
-                </div>
-              `;
-          
-              container.appendChild(propertyDiv);
+            document.addEventListener('DOMContentLoaded', () => {
+                const burgerBtn = document.querySelector('.burger-btn');
+                const navMenu = document.querySelector('nav .nav-item');
+                
+                if (burgerBtn && navMenu) {
+                    burgerBtn.addEventListener('click', () => {
+                        navMenu.classList.toggle('active');
+                        burgerBtn.classList.toggle('active');
+                    });
+                } else {
+                    console.warn('Burger button or nav menu not found!');
+                }
+        
+                const annonces = JSON.parse(localStorage.getItem('annonces')) || [];
+                const container = document.getElementById('liste-annonces');
+        
+                if (annonces.length === 0) {
+                    container.innerHTML = '<p>Aucune annonce disponible.</p>';
+                    return;
+                }
+        
+                annonces.forEach(annonce => {
+                    const slidesHtml = annonce.images.map((img, index) =>
+                        `<img class="carousel-image ${index === 0 ? 'active' : ''}" src="${img}" alt="${annonce.titre} image ${index + 1}">`
+                    ).join('');
+        
+                    const propertyDiv = document.createElement('div');
+                    propertyDiv.classList.add('property');
+        
+                    propertyDiv.innerHTML = `
+                        <div class="carousel-container">
+                            <button onclick="prevSlide(this)" class="carousel-btn prev">Précédent</button>
+                            <div class="carousel-slides">
+                                ${slidesHtml}
+                            </div>
+                            <button onclick="nextSlide(this)" class="carousel-btn next">Suivant</button>
+                        </div>
+                        <div class="info">
+                            <p>${annonce.titre} - ${annonce.description}</p>
+                            <p><strong>Type :</strong> ${annonce.type} | <strong>Prix :</strong> ${annonce.prix} €</p>
+                            <a href="annonce-detail.html?id=${annonce.id}">Voir annonce</a>
+                        </div>
+                    `;
+        
+                    container.appendChild(propertyDiv);
+                });
             });
-          });
-          
-          // Fonctions carrousel
-          function nextSlide(btn) {
-            const container = btn.closest('.carousel-container');
-            const slides = container.querySelectorAll('.carousel-image');
-            let current = Array.from(slides).findIndex(img => img.classList.contains('active'));
-            slides[current].classList.remove('active');
-            let next = (current + 1) % slides.length;
-            slides[next].classList.add('active');
-          }
-          
-          function prevSlide(btn) {
-            const container = btn.closest('.carousel-container');
-            const slides = container.querySelectorAll('.carousel-image');
-            let current = Array.from(slides).findIndex(img => img.classList.contains('active'));
-            slides[current].classList.remove('active');
-            let prev = (current - 1 + slides.length) % slides.length;
-            slides[prev].classList.add('active');
-          }
+        
+            // Fonctions carrousel
+            function nextSlide(btn) {
+                const container = btn.closest('.carousel-container');
+                const slides = container.querySelectorAll('.carousel-image');
+                let current = Array.from(slides).findIndex(img => img.classList.contains('active'));
+                slides[current].classList.remove('active');
+                let next = (current + 1) % slides.length;
+                slides[next].classList.add('active');
+            }
+        
+            function prevSlide(btn) {
+                const container = btn.closest('.carousel-container');
+                const slides = container.querySelectorAll('.carousel-image');
+                let current = Array.from(slides).findIndex(img => img.classList.contains('active'));
+                slides[current].classList.remove('active');
+                let prev = (current - 1 + slides.length) % slides.length;
+                slides[prev].classList.add('active');
+            }
         </script>
     </body>
 </html>

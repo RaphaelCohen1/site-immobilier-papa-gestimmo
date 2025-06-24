@@ -104,7 +104,98 @@ p.vision {
     gap: 20px; /* espace entre les sections */
 }
 
-
+/* Style de base */
+.main-nav {
+    position: relative;
+    z-index: 1100; /* juste au cas où */
+  }
+  
+  .burger-btn {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+/* === Pour mobiles (jusqu’à 600px) === */
+@media (max-width: 600px) {
+    body, html {
+      overflow-x: hidden;
+      width: 100%;
+    }
+  
+    .burger-btn {
+      display: block;
+    }
+  
+    .nav-item {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100vw;
+      background-color: white;
+      padding: 10px 0;
+      box-sizing: border-box;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 100vh;
+      overflow: visible;
+    }
+  
+    .nav-item.show {
+      display: flex !important;
+    }
+  
+    .nav-item a {
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  
+  /* === Pour très petits écrans (iPhone 7, etc.) === */
+  @media (max-width: 375px) {
+    .burger-btn {
+      font-size: 20px;
+      padding: 8px;
+    }
+  
+    .nav-item a {
+      font-size: 14px;
+      padding: 8px 6px;
+    }
+  
+    .nav-item {
+      padding: 5px 0;
+    }
+  }
+  
+  /* === Pour tablettes et desktop (≥ 601px) === */
+  @media (min-width: 601px) {
+    .burger-btn {
+      display: none;
+    }
+  
+    .nav-item {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      min-height: auto;
+    }
+  }
+    
+/* Section de suivi et de vidéo */
 .follow-section {
     display: flex;
     flex-direction: column;
@@ -660,12 +751,51 @@ p {
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 768px) {
     .container-flex h1 {
-        position: static;
-        transform: none;
+        font-size: 16px;
         margin: 10px 0;
-        font-size: 18px;
+        text-align: center;
+    }
+
+    .toggle-container {
+        width: 90%;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .toggle-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .vision {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* optionnel : pour centrer horizontalement */
+        gap: 10px; /* espace entre les liens */
+    }
+    
+    .nav-item a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        justify-content: center; /* pour centrer texte + icône */
+        box-sizing: border-box;
     }
 }
+
 @media (max-width: 768px) {
     .toggle-container {
         display: flex;
@@ -722,14 +852,21 @@ p {
     }
     
     .nav-item {
-        flex-wrap: wrap;
-        justify-content: center;
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* optionnel : pour centrer horizontalement */
+        gap: 10px; /* espace entre les liens */
     }
     
     .nav-item a {
-        margin: 5px 10px;
-        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        justify-content: center; /* pour centrer texte + icône */
+        box-sizing: border-box;
     }
     
     .input-select-menu {
@@ -857,12 +994,21 @@ p {
 /* Correction spécifique pour la navigation */
 @media (max-width: 768px) {
     .nav-item {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* optionnel : pour centrer horizontalement */
+        gap: 10px; /* espace entre les liens */
     }
     
     .nav-item a {
-        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        justify-content: center; /* pour centrer texte + icône */
+        box-sizing: border-box;
     }
     
     .containerflex {
@@ -1336,3 +1482,73 @@ iframe {
         box-sizing: border-box;
     }
 }
+
+/* Fix complet pour le menu burger */
+
+/* Cacher par défaut */
+#navMenu {
+    display: none;
+}
+  
+/* Afficher quand la classe "show" est activée */
+#navMenu.show {
+    display: flex !important;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 50px; /* Ajuster selon la hauteur du bouton burger */
+    left: 0;
+    right: 0;
+    z-index: 999; /* Pour qu'il passe au-dessus du contenu */
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  
+/* Bouton burger visible en mobile seulement */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    position: relative;
+}
+@media (max-width: 768px) {
+    .burger-btn {
+      display: block;
+    }
+  
+    .nav-item a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    .nav-item {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: white; /* <== assure le fond visible */
+        padding: 10px;
+        gap: 10px;
+        z-index: 1000; /* s'assurer que le menu passe devant */
+        position: absolute;
+        top: 50px; /* en fonction de ton header */
+        left: 0;
+        width: 100%;
+    }
+      
+}
+  
+  /* JS à ajouter dans un <script> ou fichier JS lié :
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show");
+  }
+  */
+  

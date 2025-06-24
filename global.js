@@ -17,3 +17,26 @@ document.querySelectorAll('.input-select').forEach(select => {
         this.style.borderColor = '#ccc';
     });
 });
+
+// Fonction pour afficher/masquer le menu de navigation
+function toggleMenu() {
+    const navMenu = document.getElementById("navMenu");
+    navMenu.classList.toggle("show");
+}
+
+// Réinitialise le menu si on repasse sur un grand écran
+window.addEventListener("resize", () => {
+    const navMenu = document.getElementById("navMenu");
+
+    if (window.innerWidth > 768) {
+    navMenu.classList.remove("show"); // enlève le mode mobile
+    navMenu.style.display = "flex";   // réaffiche en mode ligne
+    } else {
+    navMenu.style.display = ""; // laisse le CSS gérer le display (none ou flex via les media queries)
+    }
+});
+/*  
+burgerBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    burgerBtn.classList.toggle('active');
+});*/
