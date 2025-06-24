@@ -79,7 +79,7 @@ p.slogant{
     justify-content: space-between;
     align-items: center;
     background-color: #fff; /* ou une autre couleur uniforme */
-    padding: 0;  /* Supprime le padding horizontal */
+    padding: 7px;
     margin-top: 0;
     border-top: none; /* Enlève la bordure supérieure si elle existe */
 }
@@ -113,10 +113,21 @@ p.vision {
 
 /* Navigation */
 nav {
-    background: white;
-    width: 100%;
-    padding: 10px 0; 
-    text-align: center;
+    display: none; /* menu caché par défaut en petit écran */
+    flex-direction: column; /* pour les liens en colonne */
+    background-color: white; /* si besoin */
+    position: absolute; /* pour superposer */
+    top: 60px; /* sous le burger */
+    left: 0;
+    right: 0;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* Quand burger activé, menu affiché */
+nav.show {
+display: flex;
 }
 nav a {
     color: #E6007E;
@@ -167,7 +178,7 @@ nav a:hover {
 
 /* Styles pour le menu burger */
 .burger-btn {
-    display: none; /* Caché par défaut */
+    display: block; /* visible en petit écran */
     background: none;
     border: none;
     cursor: pointer;
@@ -369,19 +380,7 @@ transform: rotate(-45deg) translate(7px, -6px);
         align-items: flex-start;
     }
 
-    nav a {
-        font-size: 16px;
-    }
 
-    .nav-item {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .nav-item a {
-        padding: 8px 0;
-    }
 
     .nav-item.active {
         display: flex;
@@ -428,14 +427,117 @@ transform: rotate(-45deg) translate(7px, -6px);
         display: none;
     }
 
+    /* Navigation */
+    nav {
+        background: white;
+        width: 100%;
+        padding: 10px 0; 
+    }
+    
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* ou flex-start si vous voulez aligner à gauche */
+        gap: 15px; /* espace entre les liens */
+        padding: 10px 0;
+    }
+    
+    .nav-item a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #E6007E;
+        padding: 5px 0;
+        width: 100%; /* prend toute la largeur */
+        text-align: center; /* centre le texte */
+    }
+    
     .nav-item svg {
         margin-bottom: 5px;
         width: 24px;
         height: 24px;
     }
+    
+    /* Supprimez les marges inutiles sur les liens */
+    nav a {
+        margin: 0;
+    }
+
+     /* Affiche le bouton burger en mobile */
+     .burger-btn {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        z-index: 1100;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Cache le menu par défaut */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px; /* en dessous du burger */
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 15px 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    /* Affiche le menu quand la classe show est ajoutée */
+    nav.show {
+        display: flex;
+    }
+
+    /* Style des liens dans le menu burger */
+    nav a {
+        font-size: 16px;
+        padding: 8px 0;
+        color: #5f6368;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    nav a:hover {
+        background-color: #f0f0f0;
+        border-radius: 4px;
+    }
+    
+    /* Adaptation de ta structure .nav-item si besoin */
+    .nav-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .nav-item.active {
+        display: flex;
+    }
+    
+    /* Si tu veux masquer certains éléments en mobile */
+    .drom-com,
+    .social-block.desktop-blk {
+        display: none;
+    }
+
+    /* Ajuste l’en-tête pour mobile */
+    header .container-flex, 
+    .containerflex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 /* Pour le grand écran, on le laisse toujours visible */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
     .nav-item {
       display: flex !important;
       flex-direction: row;
@@ -443,6 +545,14 @@ transform: rotate(-45deg) translate(7px, -6px);
   
     .burger-btn {
       display: none; /* plus besoin du burger en grand écran */
+    }
+
+    nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        box-shadow: none;
+        padding: 0;
     }
 }
 

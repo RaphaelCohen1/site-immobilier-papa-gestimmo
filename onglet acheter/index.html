@@ -368,11 +368,11 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const burgerBtn = document.querySelector('.burger-btn');
-                const navMenu = document.querySelector('nav .nav-item');
+                const navMenu = document.querySelector('nav');
                 
                 if (burgerBtn && navMenu) {
                     burgerBtn.addEventListener('click', () => {
-                        navMenu.classList.toggle('active');
+                        navMenu.classList.toggle('show');
                         burgerBtn.classList.toggle('active');
                     });
                 } else {
