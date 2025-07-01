@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+      
+      <nav id="main-nav" class="burger-menu">
+        <a href="#">Accueil</a>
+        <a href="#">Acheter</a>
+        <a href="#">Estimer</a>
+      </nav>
+      
+      <style>
+        .burger-menu {
+          display: none;
+          flex-direction: column;
+          background: red;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          padding: 20px;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .burger-menu.show {
+          display: flex;
+        }
+        .burger {
+          cursor: pointer;
+          background: none;
+          border: none;
+          background-color: rgb(0, 60, 255);
+        }
+        .burger-bar {
+          width: 25px;
+          height: 3px;
+          background-color: #E6007E;
+          margin: 4px 0;
+          transition: all 0.3s ease;
+        }
+      </style>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const burger = document.querySelector(".burger");
+          const menu = document.querySelector("#main-nav");
+      
+          burger.addEventListener("click", () => {
+            console.log("Burger cliqué !");
+            menu.classList.toggle("show");
+            const expanded = burger.getAttribute("aria-expanded") === "true";
+            burger.setAttribute("aria-expanded", !expanded);
+          });
+        });
+      </script>
+      
+</body>
+</html>

@@ -7,18 +7,40 @@
 }
 
 /* Style général */
-body {
+html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    background-color: #F5F5F5; /* Couleur de fond claire */
+    height: 100%;
 }
+.main-content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+.main-nav {
+    display : block; /* Affiche le menu de navigation */
+}
+.main-nav.show {
+    display: block;
+}
+  
+  
+/*
+.container-global {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+*/  
 
 /* Header */
 header {
     width: 100%;     /* Prend toute la largeur */
     padding: 0;      /* Supprime le padding interne */
     margin: 0;       /* Supprime la marge externe */
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 
@@ -40,6 +62,30 @@ p.slogant{
     font-size: 35px;
     font-family: 'Montserrat', sans-serif; /* Utilisation de Montserrat comme police */
     font-weight: 700; /* Poids de la police en gras */
+}
+
+/*Bouton compte*/
+
+/* Bouton compte - version alignée */
+.bouton-compte {
+    position: relative; /* Nécessaire pour le positionnement */
+    background-color: #E6007E;
+    color: white;
+    padding: 8px 16px; /* Identique aux nav-item */
+    border-radius: 5px;
+    font-size: 14px; /* Même taille de police */
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle; /* Alignement précis */
+    line-height: 1.5; /* Ajustement fin */
+    margin: 0;
+    top : -271px; /* Ajustement de la position verticale */
+}
+
+/* Si vos onglets sont en inline-block */
+.nav-item, .bouton-compte {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 
@@ -73,10 +119,12 @@ p.slogant{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff; /* ou une autre couleur uniforme */
     padding: 0;  /* Supprime le padding horizontal */
     margin-top: 0;
+    margin-left: 0px; /* Ajuste la marge gauche pour centrer le contenu */
+    margin-right: 0px; /* Ajuste la marge droite pour centrer le contenu */
     border-top: none; /* Enlève la bordure supérieure si elle existe */
+    position: relative; /* Nécessaire pour le positionnement absolu de l'élément h1 */
 }
 
 p.vision {
@@ -86,31 +134,75 @@ p.vision {
 
 /* Affiche fixée à gauche du contenu principal */
 .affiche-etat-date-fixe {
-    position: absolute;
-    top: 260px; /* Ajuste selon ton header */
-    left: 30px;
-    width: 300px;
-    border: 2px solid #0066cc;
-    background: #f5faff;
+    width: 100%;
+    background-color: #f7f7f7;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
     padding: 20px;
-    border-radius: 10px;
-    font-size: 1rem;
-    z-index: 10;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+  
+
+/* ============ MAIN WRAPPER ============ */
+.etat-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* Pour éviter que le main ne passe sous l'affiche */
-main {
-    margin-left: 350px; /* Ajuste selon la largeur de l'affiche + espace */
+/* ============ CONTENU TEXTE ============ */
+.contenu-etat-date {
+    flex: 1;
+    min-width: 300px;
 }
 
-@media (max-width: 900px) {
-    .affiche-etat-date-fixe,
-    main {
-        position: static;
-        margin-left: 0;
-        width: 100%;
-    }
+/* ============ FORMULAIRE ============ */
+.formulaire-etat-date {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.formulaire-etat-date form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulaire-etat-date input,
+.formulaire-etat-date textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.formulaire-etat-date button {
+    background-color: #cc0000;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulaire-etat-date button:hover {
+    background-color: #a80000;
 }
 
 
@@ -151,16 +243,7 @@ main {
 .follow-section, .video-section {
     flex: 1; /* Chaque section prend une part égale de l'espace disponible */
 }
-/* Section partie du formulaire et ce qui le stylise*/
-main {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 32px 24px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-}
+
 
 h2 {
     color: #1a3557;
@@ -233,18 +316,7 @@ button[type="submit"]:hover {
     background: linear-gradient(90deg, #1a3557 60%, #4e8cff 100%);
 }
 
-@media (max-width: 700px) {
-    main {
-        padding: 18px 6vw;
-        max-width: 98vw;
-    }
-    h2 {
-        font-size: 1.2rem;
-    }
-    button[type="submit"] {
-        font-size: 1rem;
-    }
-}
+
 
 
 /* La classe hero */
@@ -356,7 +428,7 @@ svg {
 
 /* Navigation */
 nav {
-    background: white;
+    /*background: white;*/
     width: 100%;
     padding: 10px 0; 
     text-align: center;
@@ -390,6 +462,8 @@ nav a:hover {
   align-items: flex-end;
   height: 50px; /* hauteur fixe si tu veux les mettre bien en bas */
   color: #E6007E; /* couleur du texte */
+  flex-direction: row; /* pour les mettre en ligne */
+  gap: 100px;
 }
 
 .nav-item a {
@@ -617,6 +691,7 @@ nav a:hover {
 }
 
 /* Footer bottom 
+*/
 .footer-bottom {
     text-align: center;
     padding: 2rem 1rem 1rem 1rem;
@@ -661,7 +736,6 @@ nav a:hover {
 .footer-bottom ul li a:hover {
     text-decoration: underline;
 }
-*/
 .site-footer {
     background-color: #3c3c3c; /* Couleur de fond */
     color: white;
@@ -759,4 +833,658 @@ nav a:hover {
 .footer-bottom ul li a:hover {
     text-decoration: underline;
 }
+/* Burger Menu */
 
+.burger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #E6007E;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+/*
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.burger-menu.show {
+    display: flex;
+}
+
+.burger-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+}
+*/
+.burger {
+    display: none; /* caché par défaut (visible seulement en mobile via media query) */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #E6007E;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Styles des boutons/liens dans le menu */
+.burger-menu a, .burger-menu button {
+    background: transparent !important; /* Nécessaire si conflit avec Bootstrap */
+    color: inherit; /* Hérite de .burger-menu */
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0;
+}
+
+/* Effet au survol (optionnel) */
+.burger-menu a:hover, .burger-menu button:hover {
+    background: rgba(0, 0, 0, 0.05) ; /* Léger effet hover */
+}
+.burger-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.burger-menu .nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Assurez-vous que TOUS les onglets ont un fond blanc */
+.burger-menu, .burger-menu * {
+    /*background: white ;*/
+    color: black !important; /* Texte lisible */
+}
+/* Conteneur principal */
+.burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Hauteur automatique */
+    min-height: 100vh; /* Au moins la hauteur de l'écran */
+    background: white;
+    z-index: 1000;
+    overflow-y: auto; /* Permet le défilement si besoin */
+    padding: 20px;
+    display: none; /* Caché par défaut */
+}
+/* Bouton de fermeture - caché par défaut */
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* === RESPONSIVE QUERIES === */
+@media (max-width: 1024px) {
+    .etat-date-wrapper {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .contenu-etat-date, .formulaire-etat-date {
+      width: 100%;
+    }
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3); /* ou transparent */
+    z-index: 999; /* juste sous le menu */
+    display: none;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+@media (max-width: 768px) {
+    h1, h2, h3 {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .formulaire-etat-date form {
+      padding: 15px;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        /*background: white;*/
+        z-index: 1000;
+        transition: left 0.3s ease;
+        padding-top: 80px; /* Espace pour le bouton fermer */
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
+    }
+
+    .main-nav.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto; /* Hauteur automatique */
+        background-color: #fff; /* Fond blanc pour le menu */
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 100; /* Assure que le menu est au-dessus des autres
+        éléments */
+    }    
+    .main-nav.show .burger {
+        background: #fff;
+    }
+    .main-nav.show .nav-item,
+    .main-nav.show .nav-item a {
+        background: #fff;
+    }
+    
+    .main-nav.show .nav-item {
+        display: flex; /* ou block */
+        flex-direction: column; /* pour un menu vertical */
+        background: #fff; /* Fond blanc pour le menu */
+    }
+
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 2rem;
+    }
+  
+    .socials {
+      gap: 10px;
+    }
+  
+    .socials li {
+      margin: 0;
+    }
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: auto; /* Hauteur automatique */
+        background-color: #fff; /* Fond blanc pour le menu */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 15; /* Assure que le menu est au-dessus des autres
+        éléments */
+    }
+
+    .column-menu {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+
+    .widget-menu {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .widget-menu h3 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .widget-menu ul {
+        text-align: center;
+    }
+
+    .widget-menu ul li a {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+    }
+
+    .nav-item.show {
+        display: flex;
+        background-color: white;
+    }
+
+    /* Bouton burger */
+    /* Afficher le burger en mobile */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 24px;
+    }
+    
+    .burger-bar {
+        width: 25px;
+        height: 3px;
+        background-color: #E6007E;
+    }
+
+    .burger-line {
+        width: 30px;
+        height: 3px;
+        background-color: #E6007E;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+    .burger {
+        display: block;
+    }
+
+    .burger-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000; /* Valeur élevée */
+    }
+
+    .burger-menu.show {
+        display: flex;
+    }
+
+    .burger-menu .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: #fff;
+        justify-content: flex-start;
+    }
+
+    /* Styles du menu mobile 
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        /*background: white;*/
+    /*    transition: left 0.3s ease;
+        padding-top: 70px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }*/
+    
+    .main-nav.show {
+        left: 0;
+    }
+    
+    /* Afficher le bouton fermer seulement quand le menu est ouvert */
+    .main-nav.show .close-btn {
+        display: block;
+    }
+    
+    /* Empêcher le scroll du body quand menu ouvert */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .containerflex {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Bouton de fermeture */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        z-index: 1100;
+        cursor: pointer;
+    }
+    /*test*/
+    .burger-menu {
+        background: transparent !important; /* Annule le fond blanc */
+        box-shadow: none !important;
+    }
+    
+    .burger-menu .nav-item {
+        background: rgba(255,255,255,0.95); /* Fond légèrement transparent */
+    }
+    
+    /* Cache l'overlay par défaut */
+    body::before {
+        content: none !important;
+    }
+    
+}
+
+/* Burger Menu */
+/* Style du bouton burger (caché desktop) */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000; /* Pour être au-dessus de la nav */
+    position: relative;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #E6007E; /* Couleur des barres */
+    margin: 4px 0;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+  
+
+/* Burger Menu actif : transformation en croix */
+.burger.active .burger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+  
+.burger.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+  
+.burger.active .burger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+  
+    nav#main-nav {
+      display: none; /* nav cachée par défaut */
+      position: absolute;
+      top: 65px; /* ajuster selon ta hauteur header */
+      left: 0;
+      right: 0;
+      /*background: white;*/
+      /*border-top: 1px solid #e0e0e0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);*/
+      z-index: 15;
+    }
+  
+    nav#main-nav.active {
+      display: block; /* nav visible quand active */
+    }
+  
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 15px 0;
+      align-items: center;
+    }
+  
+    .nav-item a {
+      font-size: 18px;
+      color: #E6007E;
+    }
+    .timeline {
+        max-width: 100%;
+        padding: 20px 10px;
+        position: relative;
+    }
+
+    /* Ligne verticale */
+    .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%; /* Toujours au centre */
+        width: 4px;
+        background: #e2144a;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    /* Chaque élément de la timeline */
+    .timeline-item {
+        position: relative;
+        width: 100%;
+        margin: 40px 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* Icône centrale */
+    .timeline-item .icon {
+        position: absolute;
+        left: 50%; /* au centre */
+        transform: translateX(-50%);
+        background: white;
+        border: 3px solid #e2144a;
+        color: #e2144a;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 2;
+    }
+
+    /* Contenu - on supprime la position gauche/droite */
+    .timeline-item .content {
+        width: 100% !important; /* Prend toute la largeur */
+        margin: 6 !important; /* Supprimer les marges */
+        padding: 0 20px;
+        margin-left: 13px; /* décaler à droite de l’icône */
+        text-align: left;
+        position: relative;
+    }
+    .timeline-item.right .content {
+        text-align: left;
+        margin-left: 52%;
+    }
+}
+ 
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+      font-size: 18px;
+    }
+  
+    .formulaire-etat-date input,
+    .formulaire-etat-date textarea {
+      font-size: 14px;
+    }
+  
+    .formulaire-etat-date button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .socials svg {
+      width: 25px;
+      height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-toggle {
+      display: block;
+    }
+    /*
+    .burger-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      flex-direction: column;
+      background: white;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+  
+    .burger-menu.show {
+      display: flex;
+    }
+  
+    .burger-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    */
+    .btn-user {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+    .burger {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 20;
+        background: none;
+        border: none;
+    }
+    
+    
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+    .etat-date-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contenu-etat-date, .formulaire-etat-date {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .formulaire-etat-date {
+        padding: 20px 16px;
+    }
+
+    .formulaire-etat-date input,
+    .formulaire-etat-date textarea {
+        font-size: 14px;
+    }
+
+    .formulaire-etat-date button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .etat-date-wrapper {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .affiche-etat-date-fixe {
+      font-size: 14px;
+      padding: 16px 12px;
+    }
+  
+    .affiche-etat-date-fixe h3 {
+      font-size: 18px;
+    }
+  
+    .affiche-etat-date-fixe p {
+      font-size: 14px;
+    }
+}
+  
+/* MONTRER en desktop */
+@media (min-width: 769px) {
+    .burger {
+        display: none;
+    }
+   /*
+    .burger-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .burger-menu .nav-item {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+    }
+    */
+}
+  
