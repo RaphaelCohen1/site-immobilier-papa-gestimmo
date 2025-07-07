@@ -1,0 +1,911 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+}
+
+/* Header */
+header {
+    width: 100%;     /* Prend toute la largeur */
+    padding: 0;      /* Supprime le padding interne */
+    margin: 0;       /* Supprime la marge externe */
+}
+
+
+h1 {
+    background-color: #ffffff;
+    color: #000000; /* Rend le texte visible sur un fond sombre */
+    padding: 10px; /* Ajoute de l'espace autour du texte */
+    text-align: center; /* Centre le texte */
+    font-weight: 700;
+}
+
+.slogants{
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+
+p.slogant{
+    color: #fff; /* Rend le texte visible sur un fond clair */
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif; /* Utilisation de Montserrat comme police */
+    font-weight: 700; /* Poids de la police en gras */
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  flex-shrink: 0;
+  color: #333;
+}
+/*div menu et navvbar*/
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: #ffffff; /* Couleur de fond blanc */
+  color: white;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;     /* Étirement à 100% */
+  margin: 0;       /* Supprime les marges */
+  padding: 20px 0; /* Garde un padding vertical minimal */
+  border-radius: 0; /* Supprime les coins arrondis */
+}
+
+.container-flex h1 {
+  position: absolute;
+  left: 40%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.containerflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* ou une autre couleur uniforme */
+    padding: 0;  /* Supprime le padding horizontal */
+    margin-top: 0;
+    border-top: none; /* Enlève la bordure supérieure si elle existe */
+}
+
+p.vision {
+    font-size: 1.2rem; /* Ajuste cette valeur en fonction du site cible */
+    line-height: 1.5; /* Ajoute un espacement correct entre les lignes */
+}
+
+.highlight {
+    font-weight: bold;
+    color: #d9534f; /* Couleur rouge */
+    font-size: inherit; /* Assure que les span héritent bien de la taille de .vision */
+}
+
+
+
+/* La classe hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte */
+    height: 100vh; /* Ajuste la hauteur à l'écran */
+    background-color: #e40046; /* Fond de la section */
+}
+.section-title{
+    color: black;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    width: 100%;
+    padding: 10px 0; 
+    text-align: center;
+}
+nav a {
+    color: #E6007E;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.icones {
+    fill: #E6007E;
+    transition: fill 0.3s ease;
+}
+
+.icones svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* espace entre les icônes */
+    margin-top: 10px; /* espace entre le texte et les icônes */
+    color: #E6007E; /* couleur du texte */
+}
+.nav-item {
+  display: flex;
+  justify-content: space-around; /* ou center si tu veux centrer tous les liens */
+  align-items: flex-end;
+  height: 50px; /* hauteur fixe si tu veux les mettre bien en bas */
+  color: #E6007E; /* couleur du texte */
+}
+
+.nav-item a {
+  display: flex;
+  flex-direction: column; /* icône en haut, texte en bas */
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item svg {
+  margin-bottom: 5px; /* espace entre icône et texte */
+  width: 24px;
+  height: 24px;
+}
+
+
+/* boutton de connexion */
+.btn-user{
+    background-color: #E40046; /* Couleur de fond rose */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+    border: none; /* Pas de bordure */
+    border-radius: 50px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main au survol */
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Gras */
+    transition: background 0.3s ease, color 0.3s ease; /* Transition douce */
+    margin: 0 10px; /* Espacement entre les boutons */
+}
+
+
+/* Style du conteneur du menu */
+.input-select-menu {
+    display: flex;
+    background-color: #E5004D; /* Couleur de fond rose */
+    padding: 10px;
+    border-radius: 50px; /* Arrondi des angles */
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+/* Style des champs de saisie et des sélecteurs */
+.input-select-menu input,
+.input-select-menu select {
+    background: white; /* Fond blanc pour le contraste */
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px; /* Arrondi */
+    width: 180px; /* Largeur uniforme */
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+/*Style du bouton des critère*/
+.percentage{
+    background: white;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3sease;
+}
+/*boutton de recherche*/
+#letsgo {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: 3px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px; /* Ajoute un espace au-dessus si nécessaire */
+}
+
+#letsgo:hover {
+    background-color: white;
+    color: #e40046;
+}
+/*Les prix d'exelence*/
+.banner-bottom {
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+
+
+.banner-sub-access {
+    display: flex;
+    justify-content: flex-start; /* Alignement à gauche */
+    align-items: center;
+    flex-wrap: wrap; /* Permet l'adaptation aux petits écrans */
+    gap: 0; /* Supprime tout espacement */
+    background-color: #fff;
+    color: #E40046;
+}
+
+.sub-block {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    min-width: 390px;
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime le padding */
+}
+
+
+.sub-block:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background-color: #ccc; /* Couleur de la barre de séparation */
+}
+
+.sub-image {
+    margin-right: 15px;
+}
+
+.sub-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sub-content {
+    flex: 1;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+p.sub-content{
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+/*4 card*/
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    gap: 20px;
+    padding: 40px;
+    background-color: #f5f5f5; /* Fond gris clair */
+}
+
+.service-item {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.service-item p {
+    color: #e40046;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.icon-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.icon {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.icon-hover {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-item:hover .icon {
+    opacity: 0; /* Cache l'icône normale */
+}
+
+.service-item:hover .icon-hover {
+    opacity: 1; /* Affiche l'icône au survol */
+}
+/*NOTRE VISION*/
+.vision {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 50px;
+}
+
+.vision-content {
+    max-width: 50%;
+}
+
+.vision-container {
+    background: #f5f5f5; /* Fond gris clair */
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.vision {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white; /* Fond blanc pour le bloc */
+    padding: 40px;
+    width: 80%; /* Largeur réduite */
+    max-width: 1100px; /* Évite qu'il prenne toute la page */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.vision-content {
+    max-width: 55%;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: #e40046;
+    margin: 5px 0 20px 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.highlight {
+    color: #e40046;
+    font-weight: bold;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #e40046;
+}
+
+.cta-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e40046;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
+
+.play-icon {
+    font-size: 16px;
+    color: #e40046;
+}
+
+.cta-button:hover .cta-icon {
+    background: #e40046;
+}
+
+.cta-button:hover .play-icon {
+    color: white;
+}
+
+.vision-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Arrondir légèrement l’image */
+}
+
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: #e40046;
+    margin: 5px 0 20px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.highlight {
+    color: #e40046;
+    font-weight: bold;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #e40046;
+}
+
+.cta-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e40046;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
+
+.play-icon {
+    font-size: 16px;
+    color: #e40046;
+}
+
+.cta-button:hover .cta-icon {
+    background: #e40046;
+}
+
+.cta-button:hover .play-icon {
+    color: white;
+}
+
+.vision-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Effet de survol */
+.input-select-menu input:hover,
+.input-select-menu select:hover {
+    background: #f5f5f5;
+}
+
+/* Effet de focus */
+.input-select-menu input:focus,
+.input-select-menu select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive : empilement en colonne sur mobile */
+@media (max-width: 600px) {
+    .input-select-menu {
+        flex-direction: column;
+        border-radius: 20px;
+    }
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Style du toggle-container */
+.toggle-container {
+    display: flex;
+    background-color: #f5f5f5; /* Fond rose */
+    padding: 10px;
+    border-radius: 50px; /* Arrondi */
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    gap: 5px;
+    position: relative;
+}
+
+/* Boutons */
+.toggle-button {
+    background: #ffffff; /* Fond blanc */
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px; /* Boutons arrondis */
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1; /* Au-dessus de l'indicateur */
+}
+
+/* Effet de survol */
+.toggle-button:hover {
+    background: #f5f5f5;
+}
+
+/* Bouton actif */
+.toggle-button.active {
+    background: #E5004D;
+    color: white;
+}
+
+/* Indicateur actif avec animation */
+.active-indicator {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(33.33% - 10px);
+    height: calc(100% - 10px);
+    background: #ffffff;
+    border-radius: 50px; /* Arrondi */
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+/* Position de l'indicateur */
+.toggle-container button:nth-child(1).active ~ .active-indicator {
+    transform: translateX(0%);
+}
+.toggle-container button:nth-child(2).active ~ .active-indicator {
+    transform: translateX(100%);
+}
+.toggle-container button:nth-child(3).active ~ .active-indicator {
+    transform: translateX(200%);
+}
+
+/* Animation de survol */
+.button-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-out;
+    border-radius: 50px; /* Arrondi de l'effet */
+}
+
+.toggle-button:hover .button-hover-effect {
+    transform: scaleX(1);
+}
+
+/* Formulaires */
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Carte Google Maps */
+.map-container {
+    width: 100%;
+    height: 450px;
+    margin-top: 20px;
+}
+.map {
+    width: 45%;
+    height: 450px;
+    margin-top: 20px;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.content-container {
+  display: flex;
+  height: 100vh; /* ou ce que tu veux */
+}
+
+.map {
+  flex: 1; /* prend 50% */
+  height: 100%;
+}
+
+.main-content {
+  flex: 1; /* prend 50% aussi */
+  overflow-y: auto; /* permet de scroller les biens si y en a trop */
+  padding: 20px;
+  background-color: #f9f9f9; /* pour contraster */
+}
+
+
+
+/*Lien sociaux*/
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px; /* espace entre le texte et les icônes */
+}
+
+.social-links span {
+  white-space: nowrap; /* évite que "Suivez-nous sur" passe à la ligne */
+}
+
+.social-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.follow-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* espace entre le texte et les icônes */
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* espace entre les sections */
+}
+
+.video-section {
+    display: flex;
+}
+
+.follow-section, .video-section {
+    flex: 1; /* Chaque section prend une part égale de l'espace disponible */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Espace entre les icônes */
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largeur des icônes */
+    height: 40px; /* Hauteur des icônes */
+    border-radius: 50%; /* Forme ronde pour les icônes */
+    background-color: #f0f0f0; /* Couleur de fond */
+    transition: background-color 0.3s ease; /* Transition de couleur de fond */
+}
+
+.social-icon svg {
+    width: 20px; /* Taille des images SVG */
+    height: 20px; /* Taille des images SVG */
+    fill: #555; /* Couleur de remplissage des icônes */
+}
+
+.social-icon:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+}
+
+
+.social-links img {
+  display: block;
+}
+
+.desktop-blk {
+   display: block;
+   margin-bottom: 10px; /* Ajuste la marge pour l'espacement */
+   font-size: 18px; /* Modifie la taille de la police si nécessaire */
+   font-weight: bold; /* Optionnel, pour le rendre plus visible */
+}
+
+.social-links li {
+  margin-right: 10px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /*box-sizing: border-box;*/
+    justify-content: center; /* Centre les éléments horizontalement */
+    display: flex;         /* Met les <li> en ligne */
+    /*gap: 10px;             /* Espace entre les icônes (optionnel) */
+    /*align-items: center;   /* Aligne verticalement les images */
+}
+
+svg {
+    position: relative;
+    z-index: 8; /* Assure que l'icône est au-dessus de l'effet de survol */
+    color: #E40046; /* Couleur de l'icône */
+}
+
+/* Footer */
+.site-footer {
+    background-color: #3c3c3c; /* Couleur de fond */
+    color: white;
+    padding: 2rem 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-logo img {
+    width: 72px;
+    height: 88px;
+}
+
+.footer-logo {
+    flex: 1 1 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-menu {
+    display: flex;
+    flex: 3 1 700px;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.column-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 180px;
+}
+
+.widget-menu h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #bfbfbf;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.widget-menu h3.uppercases {
+    display: inline; /* Empêcher le saut de ligne */
+    color: #808080;
+}
+
+
+.widget-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;/* sans flex-direction: column ici, ça les mettra côte à côte */
+    flex-direction: column; /* Aligne les éléments en colonne */
+}
+
+.widget-menu ul li {
+    margin: 0.3rem 0;
+}
+
+.widget-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.widget-menu ul li a:hover {
+    text-decoration: underline;
+}
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    border-top: 1px solid #666;
+    margin-top: 2rem;
+}
+
+.footer-bottom ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom ul li {
+    margin: 0 1rem;
+}
+
+.footer-bottom ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}

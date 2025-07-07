@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Détail Annonce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    h1 {
+      color: #333;
+    }
+    .annonce-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .description {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #555;
+    }
+    .images-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .images-container img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .images-container img:hover {
+      transform: scale(1.02);
+    }
+
+    .info-container {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-container h2 {
+      margin-top: 0;
+    }
+
+    .info-item {
+      margin-bottom: 10px;
+    }
+    .not-found {
+      color: red;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+          .annonce-layout {
+              grid-template-columns: 1fr;
+              gap: 20px;
+          }
+          
+          .images-container img {
+              max-height: 200px;
+          }
+          
+          .info-container {
+              padding: 15px;
+          }
+          
+          h1 {
+              font-size: 1.5rem;
+          }
+          
+          h2 {
+              font-size: 1.2rem;
+          }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="detail-container">
+    <!-- Le contenu de l’annonce sera injecté ici -->
+  </div>
+
+  <script>
+    function getParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+  
+    const annonces = JSON.parse(localStorage.getItem('annonces')) || [];
+    const id = parseInt(getParam('id'), 10);
+    const annonce = annonces.find(a => a.id === id);
+  
+    const container = document.getElementById('detail-container');
+  
+    if (annonce) {
+      container.innerHTML = `
+        <h1>${annonce.titre}</h1>
+        <div class="annonce-layout">
+          <div class="images-container">
+            ${annonce.images.map(img => `<img src="${img}" alt="photo du bien" style="width:100%; max-height:300px; object-fit:cover;">`).join('')}
+          </div>
+          <div class="info-container">
+            <h2>Description</h2>
+            <p>${annonce.description}</p>
+            <h2>Détails</h2>
+            <p><strong>Type :</strong> ${annonce.type}</p>
+            <p><strong>Prix :</strong> ${annonce.prix} €</p>
+            <p><strong>Date :</strong> ${annonce.date}</p>
+          </div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = '<p class="not-found">Annonce non trouvée ou identifiant invalide.</p>';
+    }
+  </script>
+  
+  
+
+</body>
+</html>

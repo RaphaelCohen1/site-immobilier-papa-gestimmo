@@ -1,0 +1,1490 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Style général */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.main-content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+.main-nav {
+    display : block; /* Affiche le menu de navigation */
+}
+.main-nav.show {
+    display: block;
+}
+  
+  
+/*
+.container-global {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+*/  
+
+/* Header */
+header {
+    width: 100%;     /* Prend toute la largeur */
+    padding: 0;      /* Supprime le padding interne */
+    margin: 0;       /* Supprime la marge externe */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+h1 {
+    background-color: #ffffff;
+    color: #000000; /* Rend le texte visible sur un fond sombre */
+    padding: 10px; /* Ajoute de l'espace autour du texte */
+    text-align: center; /* Centre le texte */
+    font-weight: 700;
+}
+
+.slogants{
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+
+p.slogant{
+    color: #fff; /* Rend le texte visible sur un fond clair */
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif; /* Utilisation de Montserrat comme police */
+    font-weight: 700; /* Poids de la police en gras */
+}
+
+/*Bouton compte*/
+
+/* Bouton compte - version alignée */
+.bouton-compte {
+    position: relative; /* Nécessaire pour le positionnement */
+    background-color: #E6007E;
+    color: white;
+    padding: 8px 16px; /* Identique aux nav-item */
+    border-radius: 5px;
+    font-size: 14px; /* Même taille de police */
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle; /* Alignement précis */
+    line-height: 1.5; /* Ajustement fin */
+    margin: 0;
+    top : -271px; /* Ajustement de la position verticale */
+}
+
+/* Si vos onglets sont en inline-block */
+.nav-item, .bouton-compte {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/*div menu et navvbar*/
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: #ffffff; /* Couleur de fond blanc */
+  color: white;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;     /* Étirement à 100% */
+  margin: 0;       /* Supprime les marges */
+  padding: 20px 0; /* Garde un padding vertical minimal */
+  border-radius: 0; /* Supprime les coins arrondis */
+}
+
+.container-flex h1 {
+  position: absolute;
+  left: 40%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.containerflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;  /* Supprime le padding horizontal */
+    margin-top: 0;
+    margin-left: 0px; /* Ajuste la marge gauche pour centrer le contenu */
+    margin-right: 0px; /* Ajuste la marge droite pour centrer le contenu */
+    border-top: none; /* Enlève la bordure supérieure si elle existe */
+    position: relative; /* Nécessaire pour le positionnement absolu de l'élément h1 */
+}
+
+p.vision {
+    font-size: 1.2rem; /* Ajuste cette valeur en fonction du site cible */
+    line-height: 1.5; /* Ajoute un espacement correct entre les lignes */
+}
+
+/* Affiche fixée à gauche du contenu principal */
+.affiche-etat-date-fixe {
+    width: 100%;
+    background-color: #f7f7f7;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+  
+
+/* ============ MAIN WRAPPER ============ */
+.etat-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ============ CONTENU TEXTE ============ */
+.contenu-etat-date {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* ============ FORMULAIRE ============ */
+.formulaire-etat-date {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.formulaire-etat-date form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulaire-etat-date input,
+.formulaire-etat-date textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.formulaire-etat-date button {
+    background-color: #cc0000;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulaire-etat-date button:hover {
+    background-color: #a80000;
+}
+
+
+.highlight {
+    font-weight: bold;
+    color: #d9534f; /* Couleur rouge */
+    font-size: inherit; /* Assure que les span héritent bien de la taille de .vision */
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  flex-shrink: 0;
+  color: #333;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* espace entre les sections */
+}
+
+
+.follow-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* espace entre le texte et les icônes */
+}
+
+
+.video-section {
+    display: flex;
+}
+
+.follow-section, .video-section {
+    flex: 1; /* Chaque section prend une part égale de l'espace disponible */
+}
+
+
+h2 {
+    color: #1a3557;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    border-left: 4px solid #4e8cff;
+    padding-left: 10px;
+}
+
+p {
+    color: #444;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+form {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+label {
+    font-weight: 500;
+    color: #1a3557;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    padding: 10px 12px;
+    border: 1.5px solid #c9d7ee;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f7faff;
+    transition: border 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4e8cff;
+    outline: none;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+    max-height: 200px;
+}
+
+button[type="submit"] {
+    margin-top: 8px;
+    padding: 12px 0;
+    background: linear-gradient(90deg, #4e8cff 60%, #1a3557 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(78,140,255,0.08);
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #1a3557 60%, #4e8cff 100%);
+}
+
+
+
+
+/* La classe hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte */
+    height: 100vh; /* Ajuste la hauteur à l'écran */
+    background-color: #e40046; /* Fond de la section */
+}
+.section-title{
+    color: black;
+}
+
+/*Lien sociaux*/
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px; /* espace entre le texte et les icônes */
+}
+
+.social-links span {
+  white-space: nowrap; /* évite que "Suivez-nous sur" passe à la ligne */
+}
+
+.social-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Espace entre les icônes */
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largeur des icônes */
+    height: 40px; /* Hauteur des icônes */
+    border-radius: 50%; /* Forme ronde pour les icônes */
+    background-color: #f0f0f0; /* Couleur de fond */
+    transition: background-color 0.3s ease; /* Transition de couleur de fond */
+}
+
+.social-icon svg {
+    width: 20px; /* Taille des images SVG */
+    height: 20px; /* Taille des images SVG */
+    fill: #555; /* Couleur de remplissage des icônes */
+}
+
+.social-icon:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+}
+
+
+.social-links img {
+  display: block;
+}
+
+.desktop-blk {
+   display: block;
+   margin-bottom: 10px; /* Ajuste la marge pour l'espacement */
+   font-size: 18px; /* Modifie la taille de la police si nécessaire */
+   font-weight: bold; /* Optionnel, pour le rendre plus visible */
+}
+
+.social-links li {
+  margin-right: 10px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /*box-sizing: border-box;*/
+    justify-content: center; /* Centre les éléments horizontalement */
+    display: flex;         /* Met les <li> en ligne */
+    /*gap: 10px;             /* Espace entre les icônes (optionnel) */
+    /*align-items: center;   /* Aligne verticalement les images */
+}
+
+svg {
+    position: relative;
+    z-index: 8; /* Assure que l'icône est au-dessus de l'effet de survol */
+    color: #E40046; /* Couleur de l'icône */
+}
+
+
+/* Navigation */
+nav {
+    /*background: white;*/
+    width: 100%;
+    padding: 10px 0; 
+    text-align: center;
+}
+nav a {
+    color: #E6007E;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.icones {
+    fill: #E6007E;
+    transition: fill 0.3s ease;
+}
+
+.icones svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* espace entre les icônes */
+    margin-top: 10px; /* espace entre le texte et les icônes */
+    color: #E6007E; /* couleur du texte */
+}
+.nav-item {
+  display: flex;
+  justify-content: space-around; /* ou center si tu veux centrer tous les liens */
+  align-items: flex-end;
+  height: 50px; /* hauteur fixe si tu veux les mettre bien en bas */
+  color: #E6007E; /* couleur du texte */
+  flex-direction: row; /* pour les mettre en ligne */
+  gap: 100px;
+}
+
+.nav-item a {
+  display: flex;
+  flex-direction: column; /* icône en haut, texte en bas */
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item svg {
+  margin-bottom: 5px; /* espace entre icône et texte */
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #3c3c3c; /* Couleur de fond */
+    color: white;
+    padding: 2rem 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-logo img {
+    width: 72px;
+    height: 88px;
+}
+
+.footer-logo {
+    flex: 1 1 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-menu {
+    display: flex;
+    flex: 3 1 700px;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.column-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 180px;
+}
+
+.widget-menu h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #bfbfbf;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.widget-menu h3.uppercases {
+    display: inline; /* Empêcher le saut de ligne */
+    color: #808080;
+}
+
+
+.widget-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-menu ul li {
+    margin: 0.3rem 0;
+}
+
+.widget-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.widget-menu ul li a:hover {
+    text-decoration: underline;
+}
+/*Les liens vers les réseau sociaux*/
+.socials-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #FFFFFF; /* Fond blanc pour la section des réseaux sociaux */
+}
+
+.socials-container span {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.socials {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.liste-unstyled {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#pre-footer .social-links {
+    border-right: 1px solid #d8d8d8;
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+
+.socials li {
+    margin-right: 10px;
+}
+
+.socials li:last-child {
+    margin-right: 0;
+}
+
+.socials a img {
+    width: 30px;  /* Ajustez selon vos besoins */
+    height: 30px;
+    border-radius: 50%;  /* Pour un effet arrondi */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socials a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/*Les liens vers les réseau sociaux*/
+.socials-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.socials-container span {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.socials {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.liste-unstyled {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#pre-footer .social-links {
+    border-right: 1px solid #d8d8d8;
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+
+.socials li {
+    margin-right: 10px;
+}
+
+.socials li:last-child {
+    margin-right: 0;
+}
+
+.socials a img {
+    width: 30px;  /* Ajustez selon vos besoins */
+    height: 30px;
+    border-radius: 50%;  /* Pour un effet arrondi */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socials a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Footer bottom 
+*/
+.footer-bottom {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    border-top: 1px solid #666;
+    margin-top: 2rem;
+}
+
+.footer-signature {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.footer-signature a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footer-signature a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom ul li {
+    margin: 0 1rem;
+}
+
+.footer-bottom ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+.site-footer {
+    background-color: #3c3c3c; /* Couleur de fond */
+    color: white;
+    padding: 2rem 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1 1 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-menu {
+    display: flex;
+    flex: 3 1 700px;
+    flex-wrap: nowrap;
+    gap: 2rem;
+}
+
+.column-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 180px;
+}
+
+.widget-menu h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #bfbfbf;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.widget-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;/* sans flex-direction: column ici, ça les mettra côte à côte */
+    flex-direction: column; /* Aligne les éléments en colonne */
+}
+
+.widget-menu ul li {
+    margin: 0.3rem 0;
+}
+
+.widget-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.widget-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    border-top: 1px solid #666;
+    margin-top: 2rem;
+}
+
+.footer-bottom ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom ul li {
+    margin: 0 1rem;
+}
+
+.footer-bottom ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+/* Burger Menu */
+
+.burger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #E6007E;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+/*
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.burger-menu.show {
+    display: flex;
+}
+
+.burger-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+}
+*/
+.burger {
+    display: none; /* caché par défaut (visible seulement en mobile via media query) */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #E6007E;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Styles des boutons/liens dans le menu */
+.burger-menu a, .burger-menu button {
+    background: transparent !important; /* Nécessaire si conflit avec Bootstrap */
+    color: inherit; /* Hérite de .burger-menu */
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0;
+}
+
+/* Effet au survol (optionnel) */
+.burger-menu a:hover, .burger-menu button:hover {
+    background: rgba(0, 0, 0, 0.05) ; /* Léger effet hover */
+}
+.burger-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.burger-menu .nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Assurez-vous que TOUS les onglets ont un fond blanc */
+.burger-menu, .burger-menu * {
+    /*background: white ;*/
+    color: black !important; /* Texte lisible */
+}
+/* Conteneur principal */
+.burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Hauteur automatique */
+    min-height: 100vh; /* Au moins la hauteur de l'écran */
+    background: white;
+    z-index: 1000;
+    overflow-y: auto; /* Permet le défilement si besoin */
+    padding: 20px;
+    display: none; /* Caché par défaut */
+}
+/* Bouton de fermeture - caché par défaut */
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* === RESPONSIVE QUERIES === */
+@media (max-width: 1024px) {
+    .etat-date-wrapper {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .contenu-etat-date, .formulaire-etat-date {
+      width: 100%;
+    }
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3); /* ou transparent */
+    z-index: 999; /* juste sous le menu */
+    display: none;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+@media (max-width: 768px) {
+    h1, h2, h3 {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .formulaire-etat-date form {
+      padding: 15px;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        /*background: white;*/
+        z-index: 1000;
+        transition: left 0.3s ease;
+        padding-top: 80px; /* Espace pour le bouton fermer */
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
+    }
+
+    .main-nav.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto; /* Hauteur automatique */
+        background-color: #fff; /* Fond blanc pour le menu */
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 100; /* Assure que le menu est au-dessus des autres
+        éléments */
+    }    
+    .main-nav.show .burger {
+        background: #fff;
+    }
+    .main-nav.show .nav-item,
+    .main-nav.show .nav-item a {
+        background: #fff;
+    }
+    
+    .main-nav.show .nav-item {
+        display: flex; /* ou block */
+        flex-direction: column; /* pour un menu vertical */
+        background: #fff; /* Fond blanc pour le menu */
+    }
+
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 2rem;
+    }
+  
+    .socials {
+      gap: 10px;
+    }
+  
+    .socials li {
+      margin: 0;
+    }
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: auto; /* Hauteur automatique */
+        background-color: #fff; /* Fond blanc pour le menu */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 15; /* Assure que le menu est au-dessus des autres
+        éléments */
+    }
+
+    .column-menu {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+
+    .widget-menu {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .widget-menu h3 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .widget-menu ul {
+        text-align: center;
+    }
+
+    .widget-menu ul li a {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+    }
+
+    .nav-item.show {
+        display: flex;
+        background-color: white;
+    }
+
+    /* Bouton burger */
+    /* Afficher le burger en mobile */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 24px;
+    }
+    
+    .burger-bar {
+        width: 25px;
+        height: 3px;
+        background-color: #E6007E;
+    }
+
+    .burger-line {
+        width: 30px;
+        height: 3px;
+        background-color: #E6007E;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+    .burger {
+        display: block;
+    }
+
+    .burger-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000; /* Valeur élevée */
+    }
+
+    .burger-menu.show {
+        display: flex;
+    }
+
+    .burger-menu .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: #fff;
+        justify-content: flex-start;
+    }
+
+    /* Styles du menu mobile 
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        /*background: white;*/
+    /*    transition: left 0.3s ease;
+        padding-top: 70px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }*/
+    
+    .main-nav.show {
+        left: 0;
+    }
+    
+    /* Afficher le bouton fermer seulement quand le menu est ouvert */
+    .main-nav.show .close-btn {
+        display: block;
+    }
+    
+    /* Empêcher le scroll du body quand menu ouvert */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .containerflex {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Bouton de fermeture */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        z-index: 1100;
+        cursor: pointer;
+    }
+    /*test*/
+    .burger-menu {
+        background: transparent !important; /* Annule le fond blanc */
+        box-shadow: none !important;
+    }
+    
+    .burger-menu .nav-item {
+        background: rgba(255,255,255,0.95); /* Fond légèrement transparent */
+    }
+    
+    /* Cache l'overlay par défaut */
+    body::before {
+        content: none !important;
+    }
+    
+}
+
+/* Burger Menu */
+/* Style du bouton burger (caché desktop) */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000; /* Pour être au-dessus de la nav */
+    position: relative;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: #E6007E; /* Couleur des barres */
+    margin: 4px 0;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+  
+
+/* Burger Menu actif : transformation en croix */
+.burger.active .burger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+  
+.burger.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+  
+.burger.active .burger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .burger {
+      display: flex;
+    }
+  
+    nav#main-nav {
+      display: none; /* nav cachée par défaut */
+      position: absolute;
+      top: 65px; /* ajuster selon ta hauteur header */
+      left: 0;
+      right: 0;
+      /*background: white;*/
+      /*border-top: 1px solid #e0e0e0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);*/
+      z-index: 15;
+    }
+  
+    nav#main-nav.active {
+      display: block; /* nav visible quand active */
+    }
+  
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 15px 0;
+      align-items: center;
+    }
+  
+    .nav-item a {
+      font-size: 18px;
+      color: #E6007E;
+    }
+    .timeline {
+        max-width: 100%;
+        padding: 20px 10px;
+        position: relative;
+    }
+
+    /* Ligne verticale */
+    .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%; /* Toujours au centre */
+        width: 4px;
+        background: #e2144a;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    /* Chaque élément de la timeline */
+    .timeline-item {
+        position: relative;
+        width: 100%;
+        margin: 40px 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* Icône centrale */
+    .timeline-item .icon {
+        position: absolute;
+        left: 50%; /* au centre */
+        transform: translateX(-50%);
+        background: white;
+        border: 3px solid #e2144a;
+        color: #e2144a;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 2;
+    }
+
+    /* Contenu - on supprime la position gauche/droite */
+    .timeline-item .content {
+        width: 100% !important; /* Prend toute la largeur */
+        margin: 6 !important; /* Supprimer les marges */
+        padding: 0 20px;
+        margin-left: 13px; /* décaler à droite de l’icône */
+        text-align: left;
+        position: relative;
+    }
+    .timeline-item.right .content {
+        text-align: left;
+        margin-left: 52%;
+    }
+}
+ 
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+      font-size: 18px;
+    }
+  
+    .formulaire-etat-date input,
+    .formulaire-etat-date textarea {
+      font-size: 14px;
+    }
+  
+    .formulaire-etat-date button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .socials svg {
+      width: 25px;
+      height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-toggle {
+      display: block;
+    }
+    /*
+    .burger-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      flex-direction: column;
+      background: white;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+  
+    .burger-menu.show {
+      display: flex;
+    }
+  
+    .burger-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    */
+    .btn-user {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+    .burger {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 20;
+        background: none;
+        border: none;
+    }
+    
+    
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+    .etat-date-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contenu-etat-date, .formulaire-etat-date {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .formulaire-etat-date {
+        padding: 20px 16px;
+    }
+
+    .formulaire-etat-date input,
+    .formulaire-etat-date textarea {
+        font-size: 14px;
+    }
+
+    .formulaire-etat-date button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .etat-date-wrapper {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .affiche-etat-date-fixe {
+      font-size: 14px;
+      padding: 16px 12px;
+    }
+  
+    .affiche-etat-date-fixe h3 {
+      font-size: 18px;
+    }
+  
+    .affiche-etat-date-fixe p {
+      font-size: 14px;
+    }
+}
+  
+/* MONTRER en desktop */
+@media (min-width: 769px) {
+    .burger {
+        display: none;
+    }
+   /*
+    .burger-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .burger-menu .nav-item {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+    }
+    */
+}
+  
